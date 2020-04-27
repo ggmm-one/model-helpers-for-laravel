@@ -1,6 +1,6 @@
 # Model Helpers for Laravel
 
-A set of helpers for making building Laravel apps even faster:
+A set of helpers for building Laravel apps even faster:
 
 * [CascadeSoftDeletes](cascadesofdeletes) - emulates sql cascade on delete for SoftDelete models
 
