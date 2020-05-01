@@ -3,6 +3,7 @@
 A set of helpers for building Laravel apps even faster:
 
 * [CascadeSoftDeletes](cascadesofdeletes) - emulates sql cascade on delete for SoftDelete models
+* [HasModelDisplayName](hasmodeldisplaynames) - used by other helpers to figure out the display name
 
 ## CascadeSoftDeletes
 
@@ -46,3 +47,19 @@ Some notes:
 * If you forceDelete, there will be no cascading. Use standard DB functionality for that;
 * It doesn't do cascade restore. But since all models are saved with the same deleted_at time
 you can query the database and restore those items based on the deleted_at value. (will be done in next version)
+
+## HasModelDisplayName
+
+Adds the getModelDisplayName() function.
+
+The default name is the class name. Example: class "ArticlePost"; display name "Article Post".
+
+You can override the name by using a variable named modelDisplayName.
+
+```
+class ArticlePost
+{
+    protected $modelDisplayName = 'Magazine Post';
+}
+```
+
