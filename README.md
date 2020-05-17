@@ -56,7 +56,7 @@ The default name is the class name. Example: class "ArticlePost"; display name "
 
 You can override the name by using a variable named modelDisplayName.
 
-```
+```php
 class ArticlePost
 {
     protected $modelDisplayName = 'Magazine Post';
