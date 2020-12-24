@@ -4,6 +4,7 @@ A set of helpers for building Laravel apps even faster:
 
 * [CascadeSoftDeletes](cascadesofdeletes) - emulates sql cascade on delete for SoftDelete models
 * [HasModelDisplayName](hasmodeldisplaynames) - used by other helpers to figure out the display name
+* [HasOrder](hasorder) - creates a default order by scope
 
 ## CascadeSoftDeletes
 
@@ -63,3 +64,19 @@ class ArticlePost
 }
 ```
 
+## HasOrder
+
+Creates a scope that orders by based on what you have set on a variable called hasOrder.
+
+```php
+use Ggmm\Model\HasOrder;
+
+class Post extends Model {
+    use HasOrder;
+
+    protected $hasOrder = ['created_at' => 'desc', 'title'];
+}
+
+//You can then do things like
+Post::ordered()->get();
+```
